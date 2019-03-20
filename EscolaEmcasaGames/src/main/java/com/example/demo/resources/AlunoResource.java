@@ -46,8 +46,8 @@ public class AlunoResource {
     public ResponseEntity<Void> save(@RequestBody Aluno aluno){
         Optional<Curso> curso = cursoService.findById(aluno.getIdCurso());
         if(curso.isPresent()) {
-            int id = Integer.parseInt(aluno.getIdCurso() + "" + aluno.getId());
-            aluno.setId(id);
+            //int id = Integer.parseInt(aluno.getIdCurso() + "" + aluno.getId());
+            //aluno.setId(id);
 
             curso.get().addAluno(aluno);
             aluno.setCurso(curso.get());
